@@ -1,5 +1,22 @@
+
+/* REDACTED */
+
+/* 
+        Available API functions
+        - sendMessage(message, [targets])
+        - request() [NPM Module] // HTTP(s) web requests
+        - cheerio() [NPM Module] // compressed jQuery
+        
+        Global variables
+        - content [incoming message content as a string]
+        - targets [recipients in current conversation thread]
+        - message [message object]
+*/
+
+
         var checkForCPCTools = function() {
           var alphabet = ''
+          // Only consider incoming text messages entering into the CPC chat group or admin (Devesh)
           if (message.type == 'message' && ((message.threadID && message.threadID == TEMP_CPC_GROUP_ID) || Number(message.senderID) == OWNER_ID)) {
             if (content.indexOf('/anagram ') > -1) {
               var query = encodeURIComponent(content.split('/anagram ')[1].replace('-partial', '').trim());
@@ -102,3 +119,6 @@
             }
           }
         }
+        
+/* REDACTED */
+
